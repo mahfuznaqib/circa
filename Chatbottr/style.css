@@ -1,0 +1,165 @@
+/* Define some CSS variables for colors */
+:root {
+    --primary-color: #333;
+    --secondary-color: #888;
+    --background-color: #f8f8f8;
+    --text-color: #333;
+    --common-padding: 20px;
+}
+
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, header, #hero, footer {
+    background-color: var(--background-color);
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+/* Header styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--common-padding);
+    align-items: center;
+}
+
+header a, #hero a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+header a:hover, #hero a:hover {
+    color: var(--secondary-color);
+}
+
+header nav ul {
+    display: flex;
+    list-style-type: none;
+}
+
+header nav ul li {
+    margin-right: 20px;
+}
+
+header img {
+    height: 50px;
+    width: auto;
+}
+
+/* Hero section styles */
+#hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Full height */
+    text-align: center;
+}
+
+#hero a {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+/* Carousel styles */
+#carousel-wrapper {
+    width: 100%;
+    overflow: hidden;
+}
+
+#carousel {
+    display: flex;
+    overflow: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+}
+
+#carousel figure {
+    scroll-snap-align: start;
+    flex: 0 0 100%;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+#carousel img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+#carousel figure figcaption {
+    text-align: center;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+}
+
+/* Section styles */
+section {
+    padding: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+/* Footer styles */
+footer {
+    padding: var(--common-padding);
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+/* Media query for responsiveness */
+@media screen and (max-width: 600px) {
+    header, section, footer {
+        padding: 10px;
+    }
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+#carousel::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+#carousel {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+/* Accessibility */
+a:focus, button:focus {
+    outline: 2px solid var(--primary-color);
+}
+
+/* Buttons for the slider */
+button {
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--secondary-color);
+}
+
